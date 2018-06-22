@@ -1,3 +1,14 @@
 page-home {
-
+    #ionball {
+        position: absolute;
+        bottom: 30px;
+        left: calc(50% - 60px);
+        width: 140px;
+        height: 140px;
+    }
+    #pokemon{
+        position: absolute;
+        bottom: 40%;
+        left: calc(50% - 126px);
+    }
 }
