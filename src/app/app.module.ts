@@ -6,6 +6,8 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { CameraPreview } from '@ionic-native/camera-preview';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { HttpClientModule } from '@angular/common/http';
+import { HomeServices } from '../pages/home/home.service';
 
 @NgModule({
   declarations: [
@@ -14,6 +16,7 @@ import { HomePage } from '../pages/home/home';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -25,6 +28,7 @@ import { HomePage } from '../pages/home/home';
     StatusBar,
     SplashScreen,
     CameraPreview,
+    HomeServices,
     { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })

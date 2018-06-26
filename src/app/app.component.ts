@@ -31,7 +31,6 @@ export class MyApp {
           
         },
         (err) => {
-          alert(err);
         });
     });
   }
