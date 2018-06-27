@@ -8,14 +8,10 @@ import { HomeServices } from './home.service';
 export class HomePage {
 
   constructor(public navCtrl: NavController, public homeServices: HomeServices) {
-    this.faceRecognition();
+    
   }
 
-  faceRecognition() {
-
-  }
-
-  capture() {
+  startVideo() {
 
   }
 
