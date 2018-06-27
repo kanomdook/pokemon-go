@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HomeServices } from './home.service';
+import { CameraPreview, CameraPreviewOptions } from '@ionic-native/camera-preview';
 
 @Component({
   selector: 'page-home',
@@ -8,12 +9,31 @@ import { HomeServices } from './home.service';
 })
 export class HomePage {
 
-  constructor(public navCtrl: NavController, public homeServices: HomeServices) {
-    this.verify();
+  constructor(private cameraPreview: CameraPreview, public navCtrl: NavController, public homeServices: HomeServices) {
+    //this.verify();
+  }
+
+  capture() {
+    const cameraPreviewOpts: CameraPreviewOptions = {
+      x: 0,
+      y: 0,
+      width: window.screen.width,
+      height: window.screen.height,
+      camera: 'rear',
+      tapPhoto: true,
+      previewDrag: true,
+      toBack: true,
+      alpha: 1
+    };
+    this.cameraPreview.takePicture(cameraPreviewOpts).then((imageData) => {
+
+    }, (err) => {
+      alert(err);
+    });
   }
 
   detect() {
-    let baseImg: any = 'https://upload.wikimedia.org/wikipedia/commons/c/c3/RH_Louise_Lillian_Gish.jpg';
+    let baseImg: any = 'https://vignette.wikia.nocookie.net/akb48/images/6/65/June_2017_BNK48_Kanteera_Wadcharathadsanakul.jpg/revision/latest?cb=20170606093910';
     this.homeServices.detect(baseImg).then(data => {
       console.log(data);
     }).catch(err => {
