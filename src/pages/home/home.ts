@@ -1,35 +1,22 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { HomeServices } from './home.service';
-import { CameraPreview, CameraPreviewOptions } from '@ionic-native/camera-preview';
-
 @Component({
   selector: 'page-home',
   templateUrl: 'home.html'
 })
 export class HomePage {
 
-  constructor(private cameraPreview: CameraPreview, public navCtrl: NavController, public homeServices: HomeServices) {
-    //this.verify();
+  constructor(public navCtrl: NavController, public homeServices: HomeServices) {
+    this.faceRecognition();
+  }
+
+  faceRecognition() {
+
   }
 
   capture() {
-    const cameraPreviewOpts: CameraPreviewOptions = {
-      x: 0,
-      y: 0,
-      width: window.screen.width,
-      height: window.screen.height,
-      camera: 'rear',
-      tapPhoto: true,
-      previewDrag: true,
-      toBack: true,
-      alpha: 1
-    };
-    this.cameraPreview.takePicture(cameraPreviewOpts).then((imageData) => {
 
-    }, (err) => {
-      alert(err);
-    });
   }
 
   detect() {

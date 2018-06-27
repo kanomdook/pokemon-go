@@ -1,9 +1,14 @@
 <ion-content>
-  <div id="pokemon">
-    <img src="./assets/imgs/giphy2.gif">
-  </div>
-  <div id="ionball" (click)="capture()">
-    <img src="./assets/imgs/great-ball.png">
+  <div id="content">
+    <div id="container">
+      <video id="videoel" width="400" height="300" preload="auto" playsinline autoplay>
+      </video>
+      <canvas id="overlay" width="400" height="300"></canvas>
+      <canvas id="webgl" width="400" height="300"></canvas>
+    </div>
   </div>
 
+  <div id="ionball" (click)="startVideo()">
+    <img src="./assets/imgs/great-ball.png">
+  </div>
 </ion-content>
